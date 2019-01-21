@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/add_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddRecord"
     android:background="@android:color/background_light"
-    >
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/done_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="81dp"
-        android:tint="@color/fab_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:srcCompat="@drawable/fab_done_white" />
+    tools:context=".AddRecord">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -36,7 +19,7 @@
         android:background="@drawable/circular_image"
         app:layout_constraintBottom_toTopOf="@+id/addNewUserName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/add_photo" />
@@ -72,4 +55,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addNewUserName" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/done_fab"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="84dp"
+        android:scaleType="center"
+        app:fabCustomSize="56dp"
+        android:tint="@color/fab_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        android:src="@drawable/check" />
 </android.support.constraint.ConstraintLayout>
