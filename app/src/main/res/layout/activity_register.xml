@@ -8,13 +8,14 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/login_page_image"
         android:layout_width="127dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="47dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginStart="129dp"
+        android:layout_marginStart="128dp"
         android:layout_marginTop="56dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="47dp"
+        android:contentDescription="@string/register_image"
         app:layout_constraintBottom_toTopOf="@+id/userName_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,12 +31,13 @@
         android:layout_marginEnd="59dp"
         android:layout_marginBottom="34dp"
         android:ems="10"
-        android:hint="Register user name"
+        android:hint="@string/register_user_name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/password_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/login_page_image"
+        android:autofillHints="" tools:targetApi="o" />
 
     <EditText
         android:id="@+id/password_register"
@@ -46,12 +48,13 @@
         android:layout_marginEnd="59dp"
         android:layout_marginBottom="40dp"
         android:ems="10"
-        android:hint="Register password"
+        android:hint="@string/register_password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/button_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName_register" />
+        app:layout_constraintTop_toBottomOf="@+id/userName_register"
+        android:autofillHints="" tools:targetApi="o" />
 
     <Button
         android:id="@+id/button_register"
@@ -62,7 +65,7 @@
         android:layout_marginEnd="135dp"
         android:layout_marginBottom="125dp"
         android:background="@drawable/button_style"
-        android:text="REGISTER"
+        android:text="@string/register_button"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp"

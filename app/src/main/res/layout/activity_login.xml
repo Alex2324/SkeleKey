@@ -14,52 +14,52 @@
         android:layout_marginEnd="128dp"
         android:layout_marginStart="129dp"
         android:layout_marginTop="56dp"
-        app:layout_constraintBottom_toTopOf="@+id/userName_register"
+        app:layout_constraintBottom_toTopOf="@+id/userName_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/skelekey_logo" />
 
     <EditText
-        android:id="@+id/userName_register"
-        android:layout_width="wrap_content"
+        android:id="@+id/userName_login"
+        android:layout_width="265dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="34dp"
+        android:layout_marginEnd="59dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="34dp"
         android:ems="10"
         android:hint="user name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/password_register"
+        app:layout_constraintBottom_toTopOf="@+id/password_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/password_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/password_login"
+        android:layout_width="265dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="59dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="40dp"
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/button_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName_register" />
+        app:layout_constraintTop_toBottomOf="@+id/userName_login" />
 
     <Button
         android:id="@+id/button_login"
         android:layout_width="113dp"
-        android:layout_height="wrap_content"
+        android:layout_height="49dp"
+        android:layout_marginBottom="125dp"
+        android:layout_marginEnd="135dp"
         android:layout_marginStart="136dp"
         android:layout_marginTop="29dp"
-        android:layout_marginEnd="135dp"
-        android:layout_marginBottom="125dp"
         android:background="@drawable/button_style"
         android:text=" LOG IN"
         android:textAllCaps="false"
@@ -69,7 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_register" />
+        app:layout_constraintTop_toBottomOf="@+id/password_login" />
 
     <TextView
         android:id="@+id/forgotPassword_text"
@@ -105,11 +105,10 @@
         android:id="@+id/signUp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="78dp"
         android:layout_marginStart="21dp"
         android:layout_marginTop="33dp"
-        android:layout_marginEnd="78dp"
-        android:layout_marginBottom="27dp"
-        android:clickable="true"
         android:text="Sign up!"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -117,4 +116,6 @@
         app:layout_constraintStart_toEndOf="@+id/noAccount_text"
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword_text"
         tools:text="Sign up!" />
+
+
 </android.support.constraint.ConstraintLayout>
