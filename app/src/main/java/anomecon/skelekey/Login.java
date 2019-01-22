@@ -7,11 +7,15 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
-    Button button;
-    TextView register;
+
+    private static EditText username;
+    private static EditText password;
+    private static Button button;
+    private TextView register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

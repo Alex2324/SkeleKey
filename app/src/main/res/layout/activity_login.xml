@@ -22,12 +22,12 @@
 
     <EditText
         android:id="@+id/userName_login"
-        android:layout_width="265dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="34dp"
-        android:layout_marginEnd="59dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="34dp"
         android:ems="10"
         android:hint="user name"
         android:inputType="textPersonName"
@@ -38,12 +38,12 @@
 
     <EditText
         android:id="@+id/password_login"
-        android:layout_width="265dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="59dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
