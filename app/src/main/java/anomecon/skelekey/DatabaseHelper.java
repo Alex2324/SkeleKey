@@ -87,9 +87,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
         // sorting orders
-        String sortOrder =
-                COLUMN_USER_NAME + " ASC";
-        List<User> userList = new ArrayList<User>();
+        String sortOrder = COLUMN_USER_NAME + " ASC";
+
+        List<User> userList = new ArrayList<>();
 
         //open database
         SQLiteDatabase db = this.getReadableDatabase();
@@ -136,9 +136,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean checkUser(String userName, String password) {
 
         // array of columns to fetch
-        String[] columns = {
-                COLUMN_USER_ID
-        };
+        String[] columns = {COLUMN_USER_ID};
+
         SQLiteDatabase db = this.getReadableDatabase();
         // selection criteria
         String selection = COLUMN_USER_NAME + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
