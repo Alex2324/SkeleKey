@@ -5,4 +5,5 @@
     <color name="colorAccent">#000000</color>
     <color name="fab_white">#ffffff</color>
     <color name="titleColor">#000000</color>
+    <color name="colorRed">#ff0000</color>
 </resources>

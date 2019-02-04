@@ -7,6 +7,7 @@ import android.support.design.widget.TextInputLayout;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 public class InputValidation {
 
@@ -28,7 +29,7 @@ public class InputValidation {
      * @param message
      * @return
      */
-    public boolean isTextFieldFilled(TextInputEditText tIET,
+    public boolean isTextFieldFilled(EditText tIET,
                                      TextInputLayout tIL,
                                      String message){
         //remove leading and trailing spaces
@@ -45,14 +46,14 @@ public class InputValidation {
     }
 
     /**
-     * method to check InputEditText filled .
+     * method to check InputEditText is filled .
      *
      * @param tIET
      * @param tIL
      * @param message
      * @return
      */
-    public boolean isTextFieldEmail(TextInputEditText tIET,
+    public boolean isTextFieldEmail(EditText tIET,
                                     TextInputLayout tIL,
                                     String message){
         //remove leading and trailing spaces
@@ -79,8 +80,8 @@ public class InputValidation {
      * @return
      */
 
-    public boolean isEachTextFieldsSame(TextInputEditText tIET,
-                                        TextInputEditText tIET2,
+    public boolean isEachTextFieldsSame(EditText tIET,
+                                        EditText tIET2,
                                         TextInputLayout tIL,
                                         String message){
         //remove leading and trailing spaces

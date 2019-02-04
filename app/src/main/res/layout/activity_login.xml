@@ -1,121 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    app:layout_constrainedWidth="true"
+    tools:context=".Login"
+    android:id="@+id/nestedScrollView">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="127dp"
+        android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="47dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginStart="129dp"
-        android:layout_marginTop="56dp"
-        app:layout_constraintBottom_toTopOf="@+id/userName_login"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="176dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/skelekey_logo" />
 
-    <EditText
-        android:id="@+id/userName_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="34dp"
-        android:ems="10"
-        android:hint="user name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/password_login"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/emailInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-    <EditText
-        android:id="@+id/password_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="40dp"
-        android:ems="10"
-        android:hint="password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/button_login"
+        <EditText
+            android:id="@+id/email_login"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="59dp"
+            android:layout_marginBottom="34dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/email_login"
+            android:inputType="textWebEmailAddress" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/passwordInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName_login" />
+        app:layout_constraintTop_toBottomOf="@+id/emailInputLayout">
+
+        <EditText
+            android:id="@+id/password_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="59dp"
+            android:layout_marginBottom="34dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/password_login"
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="68dp"
+            tools:layout_editor_absoluteY="387dp" />
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/button_login"
         android:layout_width="113dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="125dp"
-        android:layout_marginEnd="135dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="29dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginEnd="183dp"
         android:background="@drawable/button_style"
-        android:text=" LOG IN"
+        android:text="@string/login_button"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_login" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
 
     <TextView
         android:id="@+id/forgotPassword_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="19dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginStart="121dp"
-        android:layout_marginTop="26dp"
-        android:text="Forgot your password?"
-        app:layout_constraintBottom_toTopOf="@+id/noAccount_text"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="166dp"
+        android:text="@string/forgot_your_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_login"
-        tools:text="Forgot your password?" />
+        app:layout_constraintTop_toBottomOf="@+id/button_login" />
 
     <TextView
         android:id="@+id/noAccount_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="34dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="19dp"
-        android:text="Dont have an account?"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="38dp"
+        android:text="@string/dont_have_an_account"
         app:layout_constraintEnd_toStartOf="@+id/signUp_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotPassword_text"
-        tools:text="Dont have an account?" />
+        app:layout_constraintTop_toBottomOf="@+id/forgotPassword_text" />
 
     <TextView
         android:id="@+id/signUp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
-        android:layout_marginEnd="78dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="33dp"
-        android:text="Sign up!"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="130dp"
+        android:text="@string/sign_up"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/noAccount_text"
-        app:layout_constraintTop_toBottomOf="@+id/forgotPassword_text"
-        tools:text="Sign up!" />
+        app:layout_constraintTop_toBottomOf="@+id/forgotPassword_text" />
 
 
-</android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

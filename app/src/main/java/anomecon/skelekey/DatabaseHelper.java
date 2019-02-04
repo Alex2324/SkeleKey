@@ -127,13 +127,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return userList;
     }
     /**
-     * This method to check if user exists or not, the example utilizes email, we will select by
-     * userName
+     * This method to check if user exists or not
      *
-     * @param userName
+     * @param email
      * @return true/false
      */
-    public boolean checkUser(String userName, String password) {
+    public boolean checkUser(String email, String password) {
 
         // array of columns to fetch
         String[] columns = {COLUMN_USER_ID};
@@ -143,7 +142,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String selection = COLUMN_USER_NAME + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
 
         // selection arguments
-        String[] selectionArgs = {userName, password};
+        String[] selectionArgs = {email, password};
 
         // query user table with conditions
         /**

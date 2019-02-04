@@ -3,22 +3,31 @@
     <string name="login_title">Login</string>
     <string name="profile_title">SkeleKey</string>
     <string name="add_record_title">Add a Record</string>
+    <string name="error_message_name">Enter Full Name</string>
+    <string name="error_message_email">Enter Valid Email</string>
+    <string name="error_message_age">Enter Age</string>
+    <string name="error_message_password">Enter Password</string>
+    <string name="success_message">Registration Successful</string>
+    <string name="error_valid_email_password">Wrong Email or Password</string>
 
     <!-- Register Activity strings-->
-    <string name="register_user_name">Register user name</string>
+    <string name="register_name">Register name</string>
+    <string name="register_email">Register email</string>
     <string name="register_password">Register password</string>
     <string name="register_button">REGISTER</string>
     <string name="register_image">register image</string>
 
-    <!-- Add Activity strings-->
+    <!-- Add Record Activity strings-->
+    <string name="add_new_username">add new name</string>
     <string name="add_new_password">add new password</string>
-    <string name="add_new_username">add new username</string>
     <string name="add_image">add image</string>
-    <string name="user_name_login">user name</string>
-    <string name="password_input">password</string>
-    <string name="log_in_button">LOG IN</string>
+
+    <!-- Login Activity strings-->
+    <string name="email_login">email</string>
+    <string name="password_login">password</string>
     <string name="forgot_your_password">Forgot your password?</string>
-    <string name="dont_have_an_account">Dont have an account?</string>
+    <string name="login_button">LOG IN</string>
+    <string name="dont_have_an_account">Don\'t have an account?</string>
     <string name="sign_up">Sign up!</string>
-    <string name="login_image">login image</string>
+
 </resources>
