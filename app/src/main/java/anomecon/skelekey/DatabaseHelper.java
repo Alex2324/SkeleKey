@@ -19,26 +19,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Database Name
     private static final String DATABASE_NAME = "UserManagement.db";
 
-    // User table name, THis table is for the user to login
-    private static final String TABLE_USER = "user";
+    // User table name, This table is for the user to login
+    private static final String USER_TABLE = "User";
 
-    // User Table Columns names
+    //Content table name
+    private static final String CONTENT_TABLE = "Content";
+
+    // User Table Column names
     private static final String COLUMN_USER_ID = "user_id";
     private static final String COLUMN_USER_NAME = "user_name";
     private static final String COLUMN_USER_PASSWORD = "user_password";
     private static final String COLUMN_USER_EMAIL = "user_email";
 
+    // Content Table Column names
+    private static final String COLUMN_CONTENT_ID = "content_id";
+    private static final String COLUMN_CONTENT_USER_ID = "content_user_id";
+    private static final String COLUMN_CONTENT_MEDIA = "content_media";
+    private static final String COLUMN_CONTENT_NAME = "content_name";
+    private static final String COLUMN_CONTENT_PASSWORD = "content_password";
+    private static final String COLUMN_CONTENT_LAST_EDIT_TIME = "content_lastEditTime";
+    private static final String COLUMN_CONTENT_CREATION_TIME = "content_creationTime";
+
     // create TABLE_USER sql query
-    private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
+    private String CREATE_USER_TABLE = "CREATE TABLE " + USER_TABLE + "("
             + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
             + COLUMN_USER_EMAIL + " TEXT," + COLUMN_USER_PASSWORD + " TEXT" + ")";
 
-    // drop table sql query
-    private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
+    //create TABLE_CONTENT sql query
+    private String CREATE_CONTENT_TABLE = "CREATE TABLE " + CONTENT_TABLE + "("
+            + COLUMN_CONTENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + COLUMN_CONTENT_MEDIA + " BLOB," + COLUMN_CONTENT_NAME + " TEXT,"
+            + COLUMN_CONTENT_PASSWORD + " TEXT, " + COLUMN_CONTENT_LAST_EDIT_TIME + " INTEGER,"
+            + COLUMN_CONTENT_CREATION_TIME + " INTEGER,"
+            + COLUMN_CONTENT_USER_ID + " INTEGER, "
+            + " FOREIGN KEY ("+COLUMN_CONTENT_USER_ID+") REFERENCES "+USER_TABLE+"("+COLUMN_USER_ID +
+            "));";
+
+    // drop user table
+    private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + USER_TABLE;
+    // drop content table
+    private String DROP_CONTENT_TABLE = "DROP TABLE IF EXISTS " + USER_TABLE;
 
     /**
      * Constructor
-     *
      * @param context
      */
     public DatabaseHelper(Context context) {
@@ -48,12 +71,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER_TABLE);
+        db.execSQL(CREATE_CONTENT_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //Drop User Table if exist
         db.execSQL(DROP_USER_TABLE);
+        db.execSQL(DROP_CONTENT_TABLE);
 
         // Create tables again
         onCreate(db);
@@ -61,7 +86,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * This method is to create user record
-     *
      * @param user
      */
     public void addUser(User user) {
@@ -73,7 +97,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
 
         // Inserting Row
-        db.insert(TABLE_USER, null, values);
+        db.insert(USER_TABLE, null, values);
         db.close();
     }
 
@@ -100,7 +124,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
          * SQL query equivalent to this query function is
          * SELECT user_id,user_name,user_email,user_password FROM user ORDER BY user_name;
          */
-        Cursor cursor = db.query(TABLE_USER, //Table to query
+        Cursor cursor = db.query(USER_TABLE, //Table to query
                 userColumns,    //columns to return
                 null,        //columns for the WHERE clause
                 null,        //The values for the WHERE clause
@@ -128,7 +152,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     /**
      * This method to check if user exists or not
-     *
      * @param email
      * @return true/false
      */
@@ -150,7 +173,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
          * SQL query equivalent to this query function is
          * SELECT user_id FROM user WHERE user_name = 'jack@androidtutorialshub.com' AND user_password = 'qwerty';
          */
-        Cursor cursor = db.query(TABLE_USER, //Table to query
+        Cursor cursor = db.query(USER_TABLE, //Table to query
                 columns,                    //columns to return
                 selection,                  //columns for the WHERE clause
                 selectionArgs,              //The values for the WHERE clause
@@ -165,12 +188,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (cursorCount > 0) {
             return true;
         }
-
         return false;
     }
     /**
      * This method to update user record
-     *
      * @param user
      */
     public void updateUser(User user){
@@ -182,20 +203,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
 
         // update row
-        db.update(TABLE_USER, values, COLUMN_USER_ID + " = ?",
+        db.update(USER_TABLE, values, COLUMN_USER_ID + " = ?",
                 new String[]{String.valueOf(user.getId())});
         db.close();
     }
     /**
      * This method is to delete user record
-     *
      * @param user
      */
     public void deleteUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
         // delete user record by id
-        db.delete(TABLE_USER, COLUMN_USER_ID + " = ?",
+        db.delete(USER_TABLE, COLUMN_USER_ID + " = ?",
                 new String[]{String.valueOf(user.getId())});
         db.close();
     }
+
+    //Content Functions
 }

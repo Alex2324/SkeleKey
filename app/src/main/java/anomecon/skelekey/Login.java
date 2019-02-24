@@ -1,6 +1,7 @@
 package anomecon.skelekey;
 
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.widget.NestedScrollView;
@@ -17,7 +18,7 @@ import anomecon.skelekey.R.id;
 public class Login extends AppCompatActivity implements View.OnClickListener{
 
     private final AppCompatActivity login = Login.this;
-    private NestedScrollView nestedScrollView;
+    private ConstraintLayout constraintLayout;
 
     private EditText email;
     private EditText password;
@@ -45,6 +46,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
      * Initialize views
      */
     private void initViews() {
+        constraintLayout = findViewById(id.constraintLayout);
         inputLayoutEmail = findViewById(id.emailInputLayout);
         email = findViewById(id.email_login);
         inputLayoutPassword = findViewById(id.passwordInputLayout);
@@ -106,7 +108,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
             startActivity(main);
         }
         //display Snackbar for invalid email or password
-        else Snackbar.make(nestedScrollView,
+        else Snackbar.make(constraintLayout,
                             getString(R.string.error_valid_email_password),
                             Snackbar.LENGTH_LONG).show();
     }
