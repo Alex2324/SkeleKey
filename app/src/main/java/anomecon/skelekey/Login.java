@@ -17,6 +17,7 @@ import anomecon.skelekey.R.id;
 
 public class Login extends AppCompatActivity implements View.OnClickListener{
 
+    //region Initialize Login Variables
     private final AppCompatActivity login = Login.this;
     private ConstraintLayout constraintLayout;
 
@@ -31,6 +32,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
     private DatabaseHelper dbHelper;
     private InputValidation inputValidator;
+    //endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

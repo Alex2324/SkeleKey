@@ -1,13 +1,14 @@
 package anomecon.skelekey;
 
 public class User {
-
+    //region User Declarations
     private int id;
     private String userName;
     private String email;
     private String password;
+    //endregion
 
-    //Setters
+    //region Setters
     public void setId(int id) {
         this.id = id;
     }
@@ -23,8 +24,9 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+    //endregion
 
-    //Getters
+    //region Getters
     public int getId() {
         return id;
     }
@@ -41,4 +43,5 @@ public class User {
 
         return password;
     }
+    //endregion
 }
