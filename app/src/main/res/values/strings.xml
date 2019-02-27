@@ -19,8 +19,8 @@
     <string name="register_image">register image</string>
 
     <!-- Add Record Activity strings-->
-    <string name="add_new_username">add new name</string>
-    <string name="add_new_password">add new password</string>
+    <string name="add_new_username">Add new name</string>
+    <string name="add_new_password">Add new password</string>
     <string name="add_image">add image</string>
 
     <!-- Login Activity strings-->
@@ -31,5 +31,10 @@
     <string name="dont_have_an_account">Don\'t have an account?</string>
     <string name="sign_up">Sign up!</string>
     <string name="SkeleKeyImage">Image</string>
+
+    <!-- Slogan strings-->
+    <string name="login_slogan">A small solution to a big problem!</string>
+    <string name="registration_slogan">A small solution to a big problem!</string>
+    <string name="add_record_slogan">A small solution to a big problem!</string>
 
 </resources>

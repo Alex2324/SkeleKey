@@ -11,12 +11,24 @@
         android:layout_height="wrap_content"
         tools:context=".Register">
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginStart="99dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="100dp"
+            android:text="@string/registration_slogan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_page_image" />
+
         <ImageView
             android:id="@+id/login_page_image"
             android:layout_width="120dp"
             android:layout_height="100dp"
             android:layout_marginStart="128dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="128dp"
             android:contentDescription="@string/register_image"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,11 +40,11 @@
             android:id="@+id/name_InputLayout"
             android:layout_width="match_parent"
             android:layout_height="57dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="16dp"
             android:layout_weight="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/login_page_image">
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
 
             <EditText
                 android:id="@+id/name_login_register"
@@ -53,7 +65,7 @@
             android:id="@+id/userName_InputLayout"
             android:layout_width="match_parent"
             android:layout_height="57dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:layout_weight="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -78,8 +90,7 @@
             android:id="@+id/password_InputLayout"
             android:layout_width="match_parent"
             android:layout_height="57dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="2"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userName_InputLayout">
@@ -103,8 +114,7 @@
             android:id="@+id/confirm_password_InputLayout"
             android:layout_width="match_parent"
             android:layout_height="57dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="2"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password_InputLayout">
@@ -129,7 +139,7 @@
             android:layout_width="113dp"
             android:layout_height="49dp"
             android:layout_marginStart="149dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="149dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_style"
