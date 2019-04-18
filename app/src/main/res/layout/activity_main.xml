@@ -8,6 +8,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/greeting"
+        android:layout_width="98dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="157dp"
+        android:text="@string/greeting"
+        android:textColor="@color/colorPrimary"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/account_name"
+        android:layout_width="322dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="47dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/greeting" />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_fab"
         android:layout_width="56dp"

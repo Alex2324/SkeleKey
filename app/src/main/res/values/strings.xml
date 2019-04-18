@@ -9,6 +9,9 @@
     <string name="error_message_password">Enter Password</string>
     <string name="success_message">Registration Successful</string>
     <string name="error_valid_email_password">Wrong Email or Password</string>
+    <string name="text_already_member">Already a member? Login</string>
+    <string name="error_email_exists">Email Already Exists</string>
+    <string name="error_password_match">Password Does Not Matches</string>
 
     <!-- Register Activity strings-->
     <string name="register_name">Register name</string>
@@ -16,6 +19,7 @@
     <string name="register_password">Register password</string>
     <string name="register_confirm_password">Confirm password</string>
     <string name="register_button">REGISTER</string>
+    <string name="already_login">Already a member?</string>
     <string name="register_image">register image</string>
 
     <!-- Add Record Activity strings-->
@@ -32,9 +36,12 @@
     <string name="sign_up">Sign up!</string>
     <string name="SkeleKeyImage">Image</string>
 
+    <!-- Main Activity strings-->
+    <string name="greeting">Hello,</string>
+
     <!-- Slogan strings-->
     <string name="login_slogan">A small solution to a big problem!</string>
-    <string name="registration_slogan">A small solution to a big problem!</string>
-    <string name="add_record_slogan">A small solution to a big problem!</string>
+    <string name="registration_slogan">Setting up an account is easy!</string>
+    <string name="add_record_slogan">Add a new notch to your key!</string>
 
 </resources>

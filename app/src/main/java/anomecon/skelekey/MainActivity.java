@@ -5,8 +5,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView accountName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +26,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(addIntent);
             }
         });
+    }
+
+    /**
+     * set screen text
+     */
+    public void setTextView() {
+        accountName = findViewById(R.id.account_name);
+        accountName.setText("Set Account Name");
+    }
+    public String getTextView(){
+        accountName = findViewById(R.id.account_name);
+        String name = accountName.getText().toString();
+        return name;
     }
 }

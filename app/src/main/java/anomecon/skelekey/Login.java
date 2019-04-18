@@ -95,18 +95,18 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     private void verify(){
         if(!inputValidator.isTextFieldFilled(email,
                                             inputLayoutEmail,
-                                            getString(R.string.error_message_email))){return;}
+                                            getString(R.string.error_message_email)))return;
         if(!inputValidator.isTextFieldEmail(email,
                                             inputLayoutEmail,
-                                            getString(R.string.error_message_email))){return;}
+                                            getString(R.string.error_message_email)))return;
         if(!inputValidator.isTextFieldFilled(password,
                                             inputLayoutPassword,
-                                            getString(R.string.error_message_email))){return;}
+                                            getString(R.string.error_message_email)))return;
         if (dbHelper.checkUser(email.getText().toString().trim(),
                                 password.getText().toString().trim())){
             Intent main = new Intent(login, MainActivity.class);
             main.putExtra("Email ", email.getText().toString().trim());
-            emptyTextField();
+            setToEmpty();
             startActivity(main);
         }
         //display Snackbar for invalid email or password
@@ -117,7 +117,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     /**
      * Empty all input edit text
      */
-    private void emptyTextField(){
+    private void setToEmpty(){
         email.setText(null);
         password.setText(null);
     }
