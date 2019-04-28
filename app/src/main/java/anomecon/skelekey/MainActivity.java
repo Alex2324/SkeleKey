@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
 
-    private TextView accountName;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,18 +26,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(addIntent);
             }
         });
-    }
-
-    /**
-     * set screen text
-     */
-    public void setTextView() {
-        accountName = findViewById(R.id.account_name);
-        accountName.setText("Set Account Name");
-    }
-    public String getTextView(){
-        accountName = findViewById(R.id.account_name);
-        String name = accountName.getText().toString();
-        return name;
     }
 }

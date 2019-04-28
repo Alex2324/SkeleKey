@@ -3,7 +3,11 @@
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#000000</color>
+    <color name="colorSecondary">#FFFFFF</color>
     <color name="fab_white">#ffffff</color>
     <color name="titleColor">#000000</color>
     <color name="colorRed">#ff0000</color>
+    <color name="midGray">#474747</color>
+    <color name="darkGray">#323232</color>
+    <color name="colorTextHint">#51d8c7</color>
 </resources>

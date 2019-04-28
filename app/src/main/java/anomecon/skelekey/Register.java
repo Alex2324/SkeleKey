@@ -97,9 +97,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         if (!inputValidation.isTextFieldFilled(editEmail,
                                                 inputLayoutEmail,
                                                 getString(R.string.error_message_email))) return;
-        if (!inputValidation.isTextFieldEmail(editName,
+        if (!inputValidation.isTextFieldEmail(editEmail,
                                                 inputLayoutEmail,
-                                                getString(R.string.error_message_name))) return;
+                                                getString(R.string.error_message_email))) return;
         if (!inputValidation.isTextFieldFilled(editPassword,
                                                 inputLayoutPassword,
                                                 getString(R.string.error_message_password))) return;

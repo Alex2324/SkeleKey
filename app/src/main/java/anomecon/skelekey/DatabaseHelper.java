@@ -32,6 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_CONTENT_ID = "content_id";
     private static final String COLUMN_CONTENT_USER_ID = "content_user_id";
     private static final String COLUMN_CONTENT_MEDIA = "content_media";
+    private static final String COLUMN_CONTENT_NAME = "content_name";
     private static final String COLUMN_CONTENT_USER_NAME = "content_user_name";
     private static final String COLUMN_CONTENT_PASSWORD = "content_password";
     private static final String COLUMN_CONTENT_LAST_EDIT_TIME = "content_lastEditTime";
@@ -47,6 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //region CONTENT_TABLE sql query
     private String CREATE_CONTENT_TABLE = "CREATE TABLE " + CONTENT_TABLE + "("
             + COLUMN_CONTENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + COLUMN_CONTENT_NAME +"TEXT"
             + COLUMN_CONTENT_MEDIA + " BLOB," + COLUMN_CONTENT_USER_NAME + " TEXT,"
             + COLUMN_CONTENT_PASSWORD + " TEXT, " + COLUMN_CONTENT_LAST_EDIT_TIME + " INTEGER,"
             + COLUMN_CONTENT_CREATION_TIME + " INTEGER,"
@@ -281,6 +283,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] contentColumns = {
                 COLUMN_CONTENT_ID,
                 COLUMN_CONTENT_MEDIA,
+                COLUMN_CONTENT_NAME,
                 COLUMN_CONTENT_USER_NAME,
                 COLUMN_CONTENT_PASSWORD
         };
@@ -305,6 +308,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Content content = new Content();
                 content.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT_ID))));
                 content.setContentMedia(cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT_MEDIA)));
+                content.setContentName(cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT_NAME)));
                 content.setContentUserName(cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT_USER_NAME)));
                 content.setContentPassword(cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT_PASSWORD)));
                 contentList.add(content);
@@ -363,6 +367,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_CONTENT_MEDIA, content.getContentMedia());
+        values.put(COLUMN_CONTENT_NAME, content.getContentName());
         values.put(COLUMN_CONTENT_USER_NAME, content.getContentUserName());
         values.put(COLUMN_CONTENT_PASSWORD, content.getContentPassword());
 
@@ -379,6 +384,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_CONTENT_MEDIA, content.getContentMedia());
+        values.put(COLUMN_CONTENT_NAME, content.getContentName());
         values.put(COLUMN_CONTENT_USER_NAME, content.getContentUserName());
         values.put(COLUMN_CONTENT_PASSWORD, content.getContentPassword());
 

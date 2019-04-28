@@ -10,8 +10,8 @@
     <string name="success_message">Registration Successful</string>
     <string name="error_valid_email_password">Wrong Email or Password</string>
     <string name="text_already_member">Already a member? Login</string>
-    <string name="error_email_exists">Email Already Exists</string>
-    <string name="error_password_match">Password Does Not Matches</string>
+    <string name="error_email_exists">Email already exists</string>
+    <string name="error_password_match">Password does not match</string>
 
     <!-- Register Activity strings-->
     <string name="register_name">Register name</string>
@@ -38,6 +38,11 @@
 
     <!-- Main Activity strings-->
     <string name="greeting">Hello,</string>
+    <string name="accounts">My Accounts</string>
+    <string name="title_username">Username</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_user_name">User Name</string>
+    <string name="hint_password">Password</string>
 
     <!-- Slogan strings-->
     <string name="login_slogan">A small solution to a big problem!</string>
