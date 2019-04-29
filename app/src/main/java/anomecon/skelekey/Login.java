@@ -1,11 +1,10 @@
 package anomecon.skelekey;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,10 +14,10 @@ import android.widget.TextView;
 import helperClasses.InputValidation;
 import anomecon.skelekey.R.id;
 
-public class Login extends AppCompatActivity implements View.OnClickListener{
+public class Login extends Activity implements View.OnClickListener{
 
     //region Initialize Login Variables
-    private final AppCompatActivity login = Login.this;
+    private final Activity login = Login.this;
     private ConstraintLayout constraintLayout;
 
     private EditText email;
@@ -50,9 +49,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     private void initViews() {
         constraintLayout = findViewById(id.constraintLayout);
         inputLayoutEmail = findViewById(id.emailInputLayout);
-        email = findViewById(id.email_login);
         inputLayoutPassword = findViewById(id.passwordInputLayout);
+        email = findViewById(id.email_login);
         password = findViewById(id.password_login);
+
         button = findViewById(id.button_login);
         signUp = findViewById(id.signUp_text);
     }
@@ -89,9 +89,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         }
     }
 
-    /**
-     * Let's validate the input fields using SQLite
-     */
     private void verify(){
         if(!inputValidator.isTextFieldFilled(email,
                                             inputLayoutEmail,
@@ -101,7 +98,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                                             getString(R.string.error_message_email)))return;
         if(!inputValidator.isTextFieldFilled(password,
                                             inputLayoutPassword,
-                                            getString(R.string.error_message_email)))return;
+                                            getString(R.string.error_message_password)))return;
         if (dbHelper.checkUser(email.getText().toString().trim(),
                                 password.getText().toString().trim())){
             Intent main = new Intent(login, MainActivity.class);
@@ -114,9 +111,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                             getString(R.string.error_valid_email_password),
                             Snackbar.LENGTH_LONG).show();
     }
-    /**
-     * Empty all input edit text
-     */
     private void setToEmpty(){
         email.setText(null);
         password.setText(null);

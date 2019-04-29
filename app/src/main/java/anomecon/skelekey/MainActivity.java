@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+/**
         FloatingActionButton fab = findViewById(R.id.add_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +25,6 @@ public class MainActivity extends AppCompatActivity {
                         AddRecord.class);
                 startActivity(addIntent);
             }
-        });
+        });**/
     }
 }

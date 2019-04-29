@@ -358,6 +358,46 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
+    public boolean checkContent(String name, String userName, String password){
+        // array of columns to fetch
+        String[] columns = {COLUMN_CONTENT_ID};
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        // selection criteria
+        String selection = COLUMN_CONTENT_NAME + " = ?" + " AND " +
+                COLUMN_CONTENT_NAME + " = ?" + " AND " +
+                COLUMN_CONTENT_PASSWORD + " = ?";
+
+        // selection arguments
+        String[] selectionArgs = {name, userName, password};
+
+        // query user table with conditions
+        /**
+         * Here query function is used to fetch records from user
+         * table this function works like we use sql query.
+         * SQL query equivalent to this query function is
+         * SELECT user_id FROM content WHERE
+         * content_name = 'blahblah' AND content_userName = 'qwerty';
+         * AND content_password = 'qwerty';
+         */
+        Cursor cursor = db.query(CONTENT_TABLE, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                       //filter by row groups
+                null);                      //The sort order
+
+        int cursorCount = cursor.getCount();
+
+        cursor.close();
+        db.close();
+        if (cursorCount > 0) {
+            return true;
+        }
+       return false;
+    }
+
     /**
      * This method is to create a content record
      * @param content

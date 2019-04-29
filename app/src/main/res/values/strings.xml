@@ -23,7 +23,8 @@
     <string name="register_image">register image</string>
 
     <!-- Add Record Activity strings-->
-    <string name="add_new_username">Add new name</string>
+    <string name="add_new_name">Add new name</string>
+    <string name="add_new_username">Add new username</string>
     <string name="add_new_password">Add new password</string>
     <string name="add_image">add image</string>
 
