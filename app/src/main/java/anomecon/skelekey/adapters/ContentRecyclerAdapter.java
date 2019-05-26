@@ -6,14 +6,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-
 import anomecon.skelekey.Content;
 import anomecon.skelekey.R;
 
 import java.util.List;
 
-public class ContentRecyclerAdapter extends RecyclerView.Adapter<ContentRecyclerAdapter.ContentViewHolder> {
+public class ContentRecyclerAdapter
+        extends RecyclerView.Adapter<ContentRecyclerAdapter.ContentViewHolder> {
 
     private List<Content> listContent;
 
@@ -23,7 +22,6 @@ public class ContentRecyclerAdapter extends RecyclerView.Adapter<ContentRecycler
 
     @Override
     public ContentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // inflating recycler item view
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_content_recycler, parent, false);
 
@@ -43,10 +41,6 @@ public class ContentRecyclerAdapter extends RecyclerView.Adapter<ContentRecycler
         return listContent.size();
     }
 
-
-    /**
-     * ViewHolder class
-     */
     public class ContentViewHolder extends RecyclerView.ViewHolder {
 
         public AppCompatTextView textViewName;
@@ -60,6 +54,4 @@ public class ContentRecyclerAdapter extends RecyclerView.Adapter<ContentRecycler
             textViewPassword = view.findViewById(R.id.textPassword);
         }
     }
-
-
 }

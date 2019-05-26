@@ -1,7 +1,10 @@
 package anomecon.skelekey.adapters;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
@@ -26,7 +29,7 @@ public class ContentList extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-        //initObjects();
+        initObjects();
     }
 
     private void initViews(){
@@ -37,5 +40,36 @@ public class ContentList extends Activity{
     private void initObjects(){
         listContent = new ArrayList<>();
         contentRecyclerAdapter = new ContentRecyclerAdapter(listContent);
+
+        RecyclerView.LayoutManager layoutManager = new
+                                                        LinearLayoutManager(getApplicationContext());
+        recyclerViewContent.setLayoutManager(layoutManager);
+        recyclerViewContent.setItemAnimator(new DefaultItemAnimator());
+        recyclerViewContent.setHasFixedSize(true);
+        recyclerViewContent.setAdapter(contentRecyclerAdapter);
+        databaseHelper = new DatabaseHelper(activity);
+
+        String email = getIntent().getStringExtra("EMAIL");
+        textName.setText(email);
+        getData();
+    }
+
+    private void getData() {
+        // AsyncTask is used that SQLite operation not blocks the UI Thread.
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                listContent.clear();
+                listContent.addAll(databaseHelper.getAllContent());
+
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                contentRecyclerAdapter.notifyDataSetChanged();
+            }
+        }.execute();
     }
 }
