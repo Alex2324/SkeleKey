@@ -9,8 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import anomecon.skelekey.adapters.ContentList;
+import anomecon.skelekey.adapters.UsersList;
 import helperClasses.InputValidation;
 import anomecon.skelekey.R.id;
 
@@ -101,8 +104,8 @@ public class Login extends Activity implements View.OnClickListener{
                                             getString(R.string.error_message_password)))return;
         if (dbHelper.checkUser(email.getText().toString().trim(),
                                 password.getText().toString().trim())){
-            Intent main = new Intent(login, MainActivity.class);
-            main.putExtra("Email ", email.getText().toString().trim());
+            Intent main = new Intent(login, ContentList.class);
+            main.putExtra("EMAIL", email.getText().toString().trim());
             setToEmpty();
             startActivity(main);
         }

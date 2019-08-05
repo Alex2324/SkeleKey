@@ -32,6 +32,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private InputValidation inputValidation;
     private DatabaseHelper databaseHelper;
     private User user;
+    private Content content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,32 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         initObjects();
     }
 
+    private void initViews(){
+        inputLayoutName = findViewById(R.id.name_InputLayout);
+        inputLayoutEmail = findViewById(R.id.email_InputLayout);
+        inputLayoutPassword = findViewById(R.id.password_InputLayout);
+        inputLayoutConfirmPassword = findViewById(R.id.confirm_password_InputLayout);
+
+        editName = findViewById(R.id.name_register);
+        editEmail = findViewById(R.id.email_register);
+        editPassword = findViewById(R.id.password_register);
+        editConfirmPassword = findViewById(R.id.confirm_password_register);
+
+        button = findViewById(R.id.button_register);
+        loginText = findViewById(R.id.loginLink);
+    }
+
+    private void initListeners(){
+        button.setOnClickListener(this);
+        loginText.setOnClickListener(this);
+    }
+
+    private void initObjects(){
+        inputValidation = new InputValidation(register);
+        databaseHelper = new DatabaseHelper(register);
+        user = new User();
+        content = new Content();
+    }
     /**
      * This implemented method is to listen the click on view
      *
@@ -64,30 +91,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 finish();
                 break;
         }
-    }
-
-    private void initViews(){
-        inputLayoutName = findViewById(R.id.name_InputLayout);
-        inputLayoutEmail = findViewById(R.id.emailInputLayout);
-        inputLayoutPassword = findViewById(R.id.password_InputLayout);
-        inputLayoutConfirmPassword = findViewById(R.id.confirm_password_InputLayout);
-
-        editName = findViewById(R.id.name_register);
-        editEmail = findViewById(R.id.email_register);
-        editPassword = findViewById(R.id.password_register);
-        editConfirmPassword = findViewById(R.id.confirm_password_register);
-
-        button = findViewById(R.id.button_register);
-    }
-
-    private void initListeners(){
-        button.setOnClickListener(this);
-    }
-
-    private void initObjects(){
-        inputValidation = new InputValidation(register);
-        databaseHelper = new DatabaseHelper(register);
-        user = new User();
     }
 
     private void postData(){
@@ -113,6 +116,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             user.setPassword(editPassword.getText().toString().trim());
 
             databaseHelper.addUser(user);
+            //Also want to display this in the ContentList as it is an account the User owns
+            //databaseHelper.addContent(user);
 
             // Snack Bar to show success message that record saved successfully
             Snackbar.make(findViewById(R.id.constraintLayout), getString(R.string.success_message),

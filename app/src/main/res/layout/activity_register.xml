@@ -3,38 +3,42 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".Register">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="33dp"
-            android:layout_marginStart="99dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="100dp"
-            android:text="@string/registration_slogan"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/login_page_image" />
+        app:layout_constrainedWidth="true"
+        >
 
         <ImageView
-            android:id="@+id/login_page_image"
+            android:id="@+id/register_page_image"
             android:layout_width="120dp"
             android:layout_height="100dp"
             android:layout_marginStart="128dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="128dp"
             android:contentDescription="@string/register_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/skelekey_logo" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginStart="99dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="100dp"
+            android:text="@string/registration_slogan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.521"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_page_image" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/name_InputLayout"
@@ -64,7 +68,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/userName_InputLayout"
+            android:id="@+id/email_InputLayout"
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:layout_marginStart="-32dp"
@@ -97,7 +101,7 @@
             android:layout_marginEnd="-32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userName_InputLayout">
+            app:layout_constraintTop_toBottomOf="@+id/email_InputLayout">
 
             <EditText
                 android:id="@+id/password_register"
@@ -144,25 +148,27 @@
             android:layout_width="132dp"
             android:layout_height="64dp"
             android:layout_marginStart="149dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="19dp"
             android:layout_marginEnd="149dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/button_style"
             android:text="@string/register_button"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginLink" />
+            app:layout_constraintTop_toBottomOf="@+id/loginLink"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/loginLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="146dp"
-            android:layout_marginTop="37dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="146dp"
             android:text="@string/already_login"
             app:layout_constraintEnd_toEndOf="parent"

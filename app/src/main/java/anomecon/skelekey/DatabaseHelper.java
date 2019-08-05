@@ -31,30 +31,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // region Content Table Column names
     private static final String COLUMN_CONTENT_ID = "content_id";
     private static final String COLUMN_CONTENT_USER_ID = "content_user_id";
-    private static final String COLUMN_CONTENT_MEDIA = "content_media";
     private static final String COLUMN_CONTENT_NAME = "content_name";
     private static final String COLUMN_CONTENT_USER_NAME = "content_user_name";
     private static final String COLUMN_CONTENT_PASSWORD = "content_password";
+    private static final String COLUMN_CONTENT_EMAIL = "content_email";
     private static final String COLUMN_CONTENT_LAST_EDIT_TIME = "content_lastEditTime";
     private static final String COLUMN_CONTENT_CREATION_TIME = "content_creationTime";
     //endregion
 
     // region USER_TABLE sql query
-    private String CREATE_USER_TABLE = "CREATE TABLE " + USER_TABLE + "("
+    private String CREATE_USER_TABLE =
+            "CREATE TABLE " + USER_TABLE + "("
             + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
             + COLUMN_USER_EMAIL + " TEXT," + COLUMN_USER_PASSWORD + " TEXT" + ")";
     //endregion USER_TABLE sql query
 
     //region CONTENT_TABLE sql query
-    private String CREATE_CONTENT_TABLE = "CREATE TABLE " + CONTENT_TABLE + "("
+    private String CREATE_CONTENT_TABLE =
+            "CREATE TABLE " + CONTENT_TABLE + "("
             + COLUMN_CONTENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + COLUMN_CONTENT_NAME +"TEXT"
-            + COLUMN_CONTENT_MEDIA + " BLOB," + COLUMN_CONTENT_USER_NAME + " TEXT,"
-            + COLUMN_CONTENT_PASSWORD + " TEXT, " + COLUMN_CONTENT_LAST_EDIT_TIME + " INTEGER,"
+            + COLUMN_CONTENT_NAME +" TEXT,"
+            + COLUMN_CONTENT_USER_NAME + " TEXT,"
+            + COLUMN_CONTENT_PASSWORD + " TEXT,"+ COLUMN_CONTENT_EMAIL + " TEXT,"
+            + COLUMN_CONTENT_LAST_EDIT_TIME + " INTEGER,"
             + COLUMN_CONTENT_CREATION_TIME + " INTEGER,"
             + COLUMN_CONTENT_USER_ID + " INTEGER, "
-            + " FOREIGN KEY ("+COLUMN_CONTENT_USER_ID+") REFERENCES "+USER_TABLE+"("+COLUMN_USER_ID +
-            "));";
+            + "FOREIGN KEY (" + COLUMN_CONTENT_USER_ID + ") REFERENCES " + USER_TABLE + "(" + COLUMN_USER_ID + ")"
+            + ");";
     //endregion CONTENT_TABLE sql query
 
     // region table drops
@@ -197,7 +200,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
         // selection criteria
-        String selection = COLUMN_USER_NAME + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
+        String selection = COLUMN_USER_EMAIL + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
 
         // selection arguments
         String[] selectionArgs = {email, password};
@@ -282,14 +285,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public List<Content> getAllContent(){
         String[] contentColumns = {
                 COLUMN_CONTENT_ID,
-                COLUMN_CONTENT_MEDIA,
                 COLUMN_CONTENT_NAME,
                 COLUMN_CONTENT_USER_NAME,
-                COLUMN_CONTENT_PASSWORD
+                COLUMN_CONTENT_PASSWORD,
+                COLUMN_CONTENT_EMAIL
         };
 
         // sorting orders
-        String sortOrder = COLUMN_CONTENT_MEDIA + " ASC";
+        String sortOrder = COLUMN_CONTENT_NAME + " ASC";
 
         List<Content> contentList = new ArrayList<Content>();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -307,10 +310,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             do {
                 Content content = new Content();
                 content.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT_ID))));
-                content.setContentMedia(cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT_MEDIA)));
                 content.setContentName(cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT_NAME)));
                 content.setContentUserName(cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT_USER_NAME)));
                 content.setContentPassword(cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT_PASSWORD)));
+                content.setContentEmail(cursor.getString(cursor.getColumnIndex(COLUMN_CONTENT_EMAIL)));
+
                 contentList.add(content);
             }while(cursor.moveToNext());
         }
@@ -406,10 +410,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(COLUMN_CONTENT_MEDIA, content.getContentMedia());
         values.put(COLUMN_CONTENT_NAME, content.getContentName());
         values.put(COLUMN_CONTENT_USER_NAME, content.getContentUserName());
         values.put(COLUMN_CONTENT_PASSWORD, content.getContentPassword());
+        values.put(COLUMN_CONTENT_EMAIL, content.getContentEmail());
 
         db.insert(CONTENT_TABLE, null, values);
         db.close();
@@ -423,10 +427,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(COLUMN_CONTENT_MEDIA, content.getContentMedia());
         values.put(COLUMN_CONTENT_NAME, content.getContentName());
         values.put(COLUMN_CONTENT_USER_NAME, content.getContentUserName());
         values.put(COLUMN_CONTENT_PASSWORD, content.getContentPassword());
+        values.put(COLUMN_CONTENT_EMAIL, content.getContentEmail());
 
         db.update(CONTENT_TABLE, values, COLUMN_CONTENT_ID + " = ?",
                 new String[]{String.valueOf(content.getId())});

@@ -35,7 +35,7 @@
     <string name="login_button">LOG IN</string>
     <string name="dont_have_an_account">Don\'t have an account?</string>
     <string name="sign_up">Sign up!</string>
-    <string name="SkeleKeyImage">Image</string>
+    <string name="login_image">Image</string>
 
     <!-- Main Activity strings-->
     <string name="greeting">Hello,</string>
@@ -44,10 +44,10 @@
     <string name="hint_name">Name</string>
     <string name="hint_user_name">User Name</string>
     <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
 
     <!-- Slogan strings-->
     <string name="login_slogan">A small solution to a big problem!</string>
     <string name="registration_slogan">Setting up an account is easy!</string>
     <string name="add_record_slogan">Add a new notch to your key!</string>
-
 </resources>

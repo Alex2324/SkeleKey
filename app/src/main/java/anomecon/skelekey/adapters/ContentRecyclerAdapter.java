@@ -1,11 +1,13 @@
 package anomecon.skelekey.adapters;
 
-import android.support.v7.widget.AppCompatTextView;
+
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
 import anomecon.skelekey.Content;
 import anomecon.skelekey.R;
 
@@ -43,9 +45,9 @@ public class ContentRecyclerAdapter
 
     public class ContentViewHolder extends RecyclerView.ViewHolder {
 
-        public AppCompatTextView textViewName;
-        public AppCompatTextView textViewUserName;
-        public AppCompatTextView textViewPassword;
+        public TextView textViewName;
+        public TextView textViewUserName;
+        public TextView textViewPassword;
 
         public ContentViewHolder(View view) {
             super(view);

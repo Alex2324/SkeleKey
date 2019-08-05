@@ -13,6 +13,19 @@
         app:layout_constrainedWidth="true"
         tools:context=".Login">
 
+        <ImageView
+            android:id="@+id/login_page_image"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="128dp"
+            android:contentDescription="@string/login_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/skelekey_logo" />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -23,20 +36,7 @@
             android:text="@string/login_slogan"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="184dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="176dp"
-            android:contentDescription="@string/SkeleKeyImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/skelekey_logo" />
+            app:layout_constraintTop_toBottomOf="@+id/login_page_image" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/emailInputLayout"
@@ -121,30 +121,32 @@
 
         <TextView
             android:id="@+id/noAccount_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="38dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="152dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="24dp"
             android:text="@string/dont_have_an_account"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/signUp_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/forgotPassword_text" />
+            app:layout_constraintTop_toBottomOf="@+id/forgotPassword_text"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/signUp_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="38dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="130dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
             android:text="@string/sign_up"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/noAccount_text"
-            app:layout_constraintTop_toBottomOf="@+id/forgotPassword_text" />
+            app:layout_constraintTop_toBottomOf="@+id/forgotPassword_text"
+            app:layout_constraintVertical_bias="1.0" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

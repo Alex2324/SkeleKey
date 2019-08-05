@@ -1,6 +1,6 @@
 package anomecon.skelekey;
 
-public class User {
+public class User extends Content {
     //region User Declarations
     private int id;
     private String userName;

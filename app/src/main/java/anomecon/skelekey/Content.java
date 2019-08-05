@@ -1,12 +1,13 @@
 package anomecon.skelekey;
 
-public class Content {
+public class Content{
     //region Variable Declaration
     private int id;
     private String contentName;
     private String contentMedia;
     private String contentUserName;
     private String contentPassword;
+    private String contentEmail;
     private int creationTime;
     private int lastEditTime;
     //endregion
@@ -31,6 +32,10 @@ public class Content {
     public String getContentPassword(){
 
         return contentPassword;
+    }
+    public String getContentEmail(){
+
+        return contentEmail;
     }
     public int getCreationTime(){
 
@@ -62,6 +67,10 @@ public class Content {
     public void setContentPassword(String password){
 
         this.contentPassword = password;
+    }
+    public void setContentEmail(String email){
+
+        this.contentEmail = email;
     }
     public void setCreationTime(int time){
 
