@@ -1,5 +1,6 @@
 package anomecon.skelekey;
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import anomecon.skelekey.adapters.ContentList;
 import helperClasses.InputValidation;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
@@ -32,7 +34,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private InputValidation inputValidation;
     private DatabaseHelper databaseHelper;
     private User user;
-    private Content content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +73,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         inputValidation = new InputValidation(register);
         databaseHelper = new DatabaseHelper(register);
         user = new User();
-        content = new Content();
     }
     /**
      * This implemented method is to listen the click on view
@@ -85,6 +85,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
             case R.id.button_register:
                  postData();
+                Intent content = new Intent(getApplicationContext(), ContentList.class);
+                startActivity(content);
                 break;
 
             case R.id.loginLink:
@@ -116,8 +118,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             user.setPassword(editPassword.getText().toString().trim());
 
             databaseHelper.addUser(user);
-            //Also want to display this in the ContentList as it is an account the User owns
-            //databaseHelper.addContent(user);
 
             // Snack Bar to show success message that record saved successfully
             Snackbar.make(findViewById(R.id.constraintLayout), getString(R.string.success_message),

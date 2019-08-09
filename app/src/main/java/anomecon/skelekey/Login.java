@@ -9,11 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import anomecon.skelekey.adapters.ContentList;
-import anomecon.skelekey.adapters.UsersList;
 import helperClasses.InputValidation;
 import anomecon.skelekey.R.id;
 
@@ -35,7 +33,6 @@ public class Login extends Activity implements View.OnClickListener{
     private DatabaseHelper dbHelper;
     private InputValidation inputValidator;
     //endregion
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +42,6 @@ public class Login extends Activity implements View.OnClickListener{
         initListeners();
         initObjects();
     }
-
     /**
      * Initialize views
      */
@@ -59,7 +55,6 @@ public class Login extends Activity implements View.OnClickListener{
         button = findViewById(id.button_login);
         signUp = findViewById(id.signUp_text);
     }
-
     /**
      * Initialize listeners
      */
@@ -67,7 +62,6 @@ public class Login extends Activity implements View.OnClickListener{
         button.setOnClickListener(this);
         signUp.setOnClickListener(this);
     }
-
     /**
      * Initialize objects
      */
@@ -75,7 +69,6 @@ public class Login extends Activity implements View.OnClickListener{
         dbHelper = new DatabaseHelper(login);
         inputValidator = new InputValidation(login);
     }
-
     /**
      * @param view
      */
@@ -84,6 +77,8 @@ public class Login extends Activity implements View.OnClickListener{
         switch (view.getId()){
             case id.button_login:
                 verify();
+                //Intent addActivity = new Intent(getApplicationContext(), DeleteRecord.class);
+                //startActivity(addActivity);
                 break;
             case id.signUp_text:
                 //go to register
@@ -91,7 +86,6 @@ public class Login extends Activity implements View.OnClickListener{
                         startActivity(registerActivity);
         }
     }
-
     private void verify(){
         if(!inputValidator.isTextFieldFilled(email,
                                             inputLayoutEmail,

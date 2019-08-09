@@ -8,6 +8,8 @@
     <string name="error_message_age">Enter Age</string>
     <string name="error_message_password">Enter Password</string>
     <string name="success_message">Registration Successful</string>
+    <string name="add_success_message">Notch Created!</string>
+    <string name="delete_success_message">Notch Removed!</string>
     <string name="error_valid_email_password">Wrong Email or Password</string>
     <string name="text_already_member">Already a member? Login</string>
     <string name="error_email_exists">Email already exists</string>
@@ -27,6 +29,11 @@
     <string name="add_new_username">Add new username</string>
     <string name="add_new_password">Add new password</string>
     <string name="add_image">add image</string>
+    <string name="add_button">ADD</string>
+
+    <!-- Delete Record Activity strings-->
+    <string name="delete_name">Delete name</string>
+    <string name="delete_button">Delete</string>
 
     <!-- Login Activity strings-->
     <string name="email_login">email</string>
@@ -45,9 +52,11 @@
     <string name="hint_user_name">User Name</string>
     <string name="hint_password">Password</string>
     <string name="hint_email">Email</string>
+    <string name="action_add">Add</string>
 
     <!-- Slogan strings-->
     <string name="login_slogan">A small solution to a big problem!</string>
     <string name="registration_slogan">Setting up an account is easy!</string>
     <string name="add_record_slogan">Add a new notch to your key!</string>
+    <string name="delete_slogan">Eliminate It!</string>
 </resources>

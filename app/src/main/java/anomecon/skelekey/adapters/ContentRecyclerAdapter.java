@@ -51,9 +51,9 @@ public class ContentRecyclerAdapter
 
         public ContentViewHolder(View view) {
             super(view);
-            textViewName = view.findViewById(R.id.textName);
-            textViewUserName = view.findViewById(R.id.textUserName);
-            textViewPassword = view.findViewById(R.id.textPassword);
+            textViewName = view.findViewById(R.id.textViewName);
+            textViewUserName = view.findViewById(R.id.textViewUserName);
+            textViewPassword = view.findViewById(R.id.textViewPassword);
         }
     }
 }

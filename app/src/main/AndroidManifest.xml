@@ -24,9 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".adapters.ContentList">
-
-        </activity>
+        <activity android:name=".adapters.ContentList"
+            android:parentActivityName=".adapters.ContentList" android:windowSoftInputMode="stateAlwaysHidden"></activity>
         <activity android:name=".adapters.UsersList">
             <intent-filter>
                 <action
@@ -34,7 +33,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddRecord"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".adapters.ContentList" android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <activity android:name=".DeleteRecord"
+            android:parentActivityName=".adapters.ContentList" android:windowSoftInputMode="stateAlwaysHidden"></activity>
         <activity android:name=".Register"
             android:parentActivityName=".Login" android:windowSoftInputMode="stateAlwaysHidden"></activity>
     </application>
